@@ -25,8 +25,13 @@ const SearchFilter = () => {
                 item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
                 item.email.toLowerCase().includes(e.target.value.toLowerCase()) ||
                 item.phone.toLowerCase().includes(e.target.value.toLowerCase())
-            );
-            setData(filterResult)
+            )
+            if(filterResult.length > 0){
+                setData(filterResult)
+            } else{
+                setData([{"Name":"No Data"}])
+            }
+            
         }
         setFilterVal(e.target.value)
     }
